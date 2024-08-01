@@ -1,0 +1,1 @@
+* For a future excercise, display the logged comments on the page using react frameworks 
