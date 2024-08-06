@@ -24,6 +24,8 @@ const comments = [
 //   return (currentYear = person.year >= 19);
 // });
 
+// instead of curly brackets use the implicit function to write the expresssion
+
 const isAdult = people.some(person => ((new Date()).getFullYear) - person.year >= 19);
 const allAdult = people.every(person => ((new Date()).getFullYear) - person.year >= 19);
 
@@ -37,8 +39,11 @@ const comment = comments.find(comment => comment.id === 823423);
 // delete the comment with the ID of 823423
 const index = comments.findIndex(comment => comment.id === 823423);
 
+// one way to delete comment is to mutate the original list 
 // comments.splice(index, 1);
 
+// another way is to create a new array and use the spread operator to slice the values 
+// you require into the list so the original list is intact 
 const newComments = [
     ...comments.slice(0, index),
     ...comments.slice(index + 1)
