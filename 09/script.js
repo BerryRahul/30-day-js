@@ -16,7 +16,7 @@ console.log("hello");
 const good = "good";
 console.log(`Hello I am ${good} today`);
 
-// Styled
+// Styled can add basic css font styles in console 
 console.log("%c large text wow", "font-size:50px; background:red;");
 
 // warning!
@@ -29,6 +29,7 @@ console.error("error");
 console.info("crocs eat 4-5 people per year");
 
 // Testing
+// Can also test functionality of js elements on your page with console unit testing 
 const p = document.querySelector("p");
 console.assert(p.classList.contains("ouch"), "that is wrong");
 console.assert(1 === 2, "that is wrong");
@@ -41,6 +42,7 @@ console.dir(p);
 
 // Grouping together
 dogs.forEach((dog) => {
+  // default will be collapsed 
   //console.groupCollapsed();
   console.group(`${dog.name}`);
   console.log(`This is ${dog.name}`);
@@ -49,7 +51,7 @@ dogs.forEach((dog) => {
   console.groupEnd(`${dog.name}`);
 });
 
-// counting
+// counting - counts how many time any particular command was sent 
 console.count("Wes");
 
 // timing
