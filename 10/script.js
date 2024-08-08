@@ -1,5 +1,5 @@
 const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
-panel = document.querySelector(".inbox");
+resetButton = document.querySelector(".resetButton");
 let lastChecked;
 
 function handleCheck(e) {
@@ -18,27 +18,17 @@ function handleCheck(e) {
   lastChecked = this;
 }
 
-// fix this since cant select more then 2 boxes 
 function resetCheckboxes() {
-  let count = 0;
   checkboxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-      count++;
-    }
-  });
-  checkboxes.forEach((checkbox) => {
-    if (count > 2) {
-      checkbox.checked = false;
-    }
+    checkbox.checked = false;
   });
 }
 
-function handleMouseDown() {
-  setTimeout(resetCheckboxes, 1500);
+function handleReset() {
+  setTimeout(resetCheckboxes, 300);
 }
 
 checkboxes.forEach((checkbox) =>
   checkbox.addEventListener("click", handleCheck)
 );
-
-panel.addEventListener("mousedown", handleMouseDown);
+resetButton.addEventListener("click", handleReset);
