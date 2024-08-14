@@ -1,5 +1,6 @@
 const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
-resetButton = document.querySelector(".resetButton");
+resetButton = document.querySelector(".reset-button");
+selectAll = document.querySelector(".select-button");
 let lastChecked;
 
 function handleCheck(e) {
@@ -25,10 +26,17 @@ function resetCheckboxes() {
 }
 
 function handleReset() {
-  setTimeout(resetCheckboxes, 300);
+  setTimeout(resetCheckboxes, 200);
+}
+
+function handleSelect() {
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = true;
+  });
 }
 
 checkboxes.forEach((checkbox) =>
   checkbox.addEventListener("click", handleCheck)
 );
 resetButton.addEventListener("click", handleReset);
+selectAll.addEventListener("click", handleSelect);
