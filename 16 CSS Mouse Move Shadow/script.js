@@ -1,3 +1,5 @@
+//contenteditable tag for html allows client to edit text in the element
+
 const hero = document.querySelector(".hero");
 const text = hero.querySelector("h1");
 const walk = 100;
@@ -5,10 +7,14 @@ const walk = 100;
 function shadow(e) {
   // const width = hero.offsetWidth;
   // const height = hero.offsetHeight;
+
   // one line ESX
   const { offsetWidth: width, offsetHeight: height } = hero;
   let { offsetX: x, offsetY: y } = e;
 
+  // if the element the mouse is currently on is different then the element 
+  // that triggered the event listener 
+  // this allows that the x and y value are consistent with the page
   if (this !== e.target) {
     x = x + e.target.offsetLeft;
     y = y + e.target.offsetTop;
