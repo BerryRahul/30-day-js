@@ -28,15 +28,14 @@ function paintToCanvas() {
     // optimize
     let pixels = ctx.getImageData(0, 0, width, height);
 
-    // // apply filter
-
+    // apply filter
     // pixels = redEffect(pixels);
     pixels = rgbSplit(pixels);
     // ctx.globalAlpha = 0.1;
 
     // pixels = greenScreen(pixels);
 
-    // // display filter
+    // display filter
     ctx.putImageData(pixels, 0, 0);
   }, 16);
 }
